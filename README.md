@@ -160,20 +160,24 @@ Then access the application at `http://localhost:5000`
 ```
 trade-execution-analysis/
 ├── README.md                 # Project documentation
+├── LICENSE                   # MIT License
 ├── requirements.txt          # Python dependencies
+├── .gitignore               # Git ignore rules
 ├── index.html               # Main application interface
 ├── style.css                # Responsive styling and themes
 ├── script.js                # Interactive frontend logic
 ├── app.py                   # Flask backend API (optional)
-├── slippage_model.py        # Slippage modeling algorithms
-├── trade_allocation.py      # Trade optimization logic
-├── generate_results.py      # Data processing utilities
 ├── results.json             # Pre-calculated analysis results
+├── src/                     # Python analysis modules
+│   ├── slippage_model.py    # Slippage modeling algorithms
+│   ├── trade_allocation.py  # Trade optimization logic
+│   └── generate_results.py  # Data processing utilities
 ├── data/                    # Market data directory
-│   ├── CRWV_order_book.csv # CRWV ticker order book data
-│   ├── FROG_order_book.csv # FROG ticker order book data
-│   └── SOUN_order_book.csv # SOUN ticker order book data
-└── assets/                  # Static assets (if any)
+│   ├── CRWV_order_book.csv  # CRWV ticker order book data
+│   ├── FROG_order_book.csv  # FROG ticker order book data
+│   └── SOUN_order_book.csv  # SOUN ticker order book data
+├── docs/                    # Documentation (future use)
+└── assets/                  # Static assets (future use)
 ```
 
 ### Key Files Description
@@ -184,8 +188,9 @@ trade-execution-analysis/
   - `script.js`: Dynamic analysis engine and chart management
 
 - **Backend Analysis**:
-  - `slippage_model.py`: Power law and linear slippage modeling
-  - `trade_allocation.py`: Optimization algorithms for trade allocation
+  - `src/slippage_model.py`: Power law and linear slippage modeling
+  - `src/trade_allocation.py`: Optimization algorithms for trade allocation
+  - `src/generate_results.py`: Data processing and analysis utilities
   - `app.py`: Flask REST API for advanced backend features
 
 - **Data Files**:
@@ -259,8 +264,9 @@ python app.py
 3. Ensure CSV format matches existing files (bid_price, bid_size, ask_price, ask_size)
 
 ### Customizing Analysis
-- Modify `slippage_model.py` for different model types
-- Update `trade_allocation.py` for custom optimization constraints
+- Modify `src/slippage_model.py` for different model types
+- Update `src/trade_allocation.py` for custom optimization constraints
+- Update `src/generate_results.py` for data processing changes
 - Extend `script.js` for additional interactive features
 
 ## 📊 Performance
